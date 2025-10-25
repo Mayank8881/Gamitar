@@ -1,9 +1,9 @@
-import React from 'react';
-import GridGame from './components/GridGame';
+import GridGame from './components/gridGame';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-400 to-purple-600 p-4">
+    <div className=''>
+      
       <GridGame />
     </div>
   );
