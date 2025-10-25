@@ -170,7 +170,6 @@ interface ControlPanelProps {
   isSubmitDisabled: boolean
   hasSubmitted: boolean
   selectedCell: { row: number; col: number } | null
-  onCellSelect: (row: number, col: number) => void
   gameComplete: boolean
 }
 
@@ -181,7 +180,6 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
   isSubmitDisabled,
   hasSubmitted,
   selectedCell,
-  onCellSelect,
   gameComplete,
 }) => {
   const popularEmojis = ["⭐", "🎯", "❤️", "🔥", "🚀", "🎮", "🐱", "👑", "💎", "🌙"]

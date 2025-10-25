@@ -153,7 +153,7 @@ const GridGame: React.FC = () => {
             </div>
           </div>
           <PlayerInfo
-            onlinePlayers={gameState.onlinePlayers}
+            onlinePlayers={gameState.onlinePlayers/2}
             hasSubmitted={hasSubmitted}
             totalMoves={gameState.totalMoves}
             isConnected={isConnected}
@@ -177,7 +177,6 @@ const GridGame: React.FC = () => {
               isSubmitDisabled={isSubmitDisabled}
               hasSubmitted={hasSubmitted}
               selectedCell={selectedCell}
-              onCellSelect={handleCellSelect}
               gameComplete={gameComplete}
             />
           </div>
