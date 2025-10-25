@@ -2,9 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { io, Socket } from 'socket.io-client';
 import { SocketEvents } from '../types/game';
 
-// const SOCKET_URL = 'http://localhost:5000';
-
-const SOCKET_URL='https://gamitar-tlt2.onrender.com';
+const SOCKET_URL= import.meta.env.VITE_BACKEND_URL;
 
 export const useSocket = () => {
   const [isConnected, setIsConnected] = useState(false);
