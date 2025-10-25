@@ -1,0 +1,492 @@
+/* Cell Selection Section */
+@import "tailwindcss";
+.cell-selection-section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #e9ecef;
+  margin-bottom: 20px;
+}
+
+.cell-selection-section h3 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.cell-selection-grid {
+  display: grid;
+  grid-template-columns: 30px repeat(10, 1fr);
+  grid-template-rows: 30px repeat(10, 1fr);
+  gap: 4px;
+  margin-bottom: 15px;
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.row-label, .col-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #6c757d;
+  background: #e9ecef;
+  border-radius: 4px;
+}
+
+.cell-select-button {
+  background: white;
+  border: 2px solid #dee2e6;
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+  transition: all 0.2s ease;
+  min-height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cell-select-button:hover:not(:disabled) {
+  background: #e3f2fd;
+  border-color: #2196f3;
+  transform: scale(1.05);
+}
+
+.cell-select-button.selected {
+  background: #4caf50;
+  border-color: #45a049;
+  color: white;
+  transform: scale(1.1);
+}
+
+.cell-select-button:disabled {
+  background: #f8f9fa;
+  border-color: #dee2e6;
+  color: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.selection-status {
+  background: #e8f5e8;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #4caf50;
+  font-weight: 600;
+  text-align: center;
+  color: #2e7d32;
+}
+
+/* Grid Display Section */
+.grid-display-section {
+  text-align: center;
+}
+
+.grid-display-section h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+.grid-info {
+  background: #e3f2fd;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-weight: 600;
+  border-left: 4px solid #2196f3;
+  color: #1565c0;
+}
+
+/* Enhanced Main Grid */
+.grid-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.grid {
+  display: inline-block;
+  border: 3px solid #34495e;
+  border-radius: 10px;
+  padding: 10px;
+  background: #34495e;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.grid-row {
+  display: flex;
+}
+
+.grid-cell {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: 2px solid #bdc3c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  margin: 1px;
+  font-family: 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+}
+
+.grid-cell:hover {
+  background: #ecf0f1;
+  transform: scale(1.05);
+}
+
+.grid-cell.selected {
+  border-color: #e74c3c;
+  background: #ffeaa7;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+}
+
+.grid-cell.occupied {
+  background: #d5dbdb;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cell-selection-grid {
+    grid-template-columns: 25px repeat(10, 1fr);
+    grid-template-rows: 25px repeat(10, 1fr);
+    gap: 2px;
+  }
+  
+  .cell-select-button {
+    padding: 4px;
+    min-height: 25px;
+    font-size: 0.8em;
+  }
+  
+  .grid-cell {
+    width: 30px;
+    height: 30px;
+    font-size: 1em;
+  }
+
+  /* Game Status Banners */
+.game-complete-banner {
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: pulse 2s infinite;
+}
+
+.waiting-banner {
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.new-game-button, .ready-button {
+  background: white;
+  color: #333;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.new-game-button:hover, .ready-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Player Info Updates */
+.player-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Submit button states */
+.submit-button.complete {
+  background: #4caf50;
+}
+
+.submit-button.complete:disabled {
+  background: #4caf50;
+  cursor: not-allowed;
+}
+/* Main container for side-by-side layout */
+.container-main {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Control Panel - Left Side */
+.control-panel {
+  flex: 0 0 400px;
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  border: 2px solid #e9ecef;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+/* Grid Display - Right Side */
+.grid-display-section {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.grid-display-section h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.4em;
+}
+
+/* Grid container adjustments */
+.grid-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.grid {
+  display: inline-block;
+  border: 3px solid #34495e;
+  border-radius: 10px;
+  padding: 15px;
+  background: #34495e;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Grid info styling */
+.grid-info {
+  background: #e3f2fd;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-weight: 600;
+  border-left: 4px solid #2196f3;
+  color: #1565c0;
+  font-size: 1.1em;
+}
+
+/* Responsive design */
+
+}
+@media (max-width: 1024px) {
+  .container-main {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .control-panel {
+    flex: none;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: static;
+  }
+  
+  .grid-display-section {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-main {
+    gap: 15px;
+  }
+  
+  .control-panel {
+    padding: 20px;
+  }
+  
+  .grid {
+    padding: 10px;
+  }
+  
+  .grid-cell {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-main {
+    gap: 10px;
+  }
+  
+  .control-panel {
+    padding: 15px;
+  }
+  
+  .grid-cell {
+    width: 30px;
+    height: 30px;
+    font-size: 1em;
+  }
+  
+  .grid-info {
+    padding: 12px;
+    font-size: 1em;
+  }
+}
+/* Equal width side-by-side layout */
+/* Main container for side-by-side layout */
+.container-main {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Control Panel - Left Side */
+.control-panel {
+  flex: 0 0 400px;
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  border: 2px solid #e9ecef;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+/* Grid Display - Right Side */
+.grid-display-section {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.grid-display-section h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.4em;
+}
+
+/* Grid container adjustments */
+.grid-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.grid {
+  display: inline-block;
+  border: 3px solid #34495e;
+  border-radius: 10px;
+  padding: 15px;
+  background: #34495e;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Grid info styling */
+.grid-info {
+  background: #e3f2fd;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-weight: 600;
+  border-left: 4px solid #2196f3;
+  color: #1565c0;
+  font-size: 1.1em;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .container-main {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .control-panel {
+    flex: none;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: static;
+  }
+  
+  .grid-display-section {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-main {
+    gap: 15px;
+  }
+  
+  .control-panel {
+    padding: 20px;
+  }
+  
+  .grid {
+    padding: 10px;
+  }
+  
+  .grid-cell {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-main {
+    gap: 10px;
+  }
+  
+  .control-panel {
+    padding: 15px;
+  }
+  
+  .grid-cell {
+    width: 30px;
+    height: 30px;
+    font-size: 1em;
+  }
+  
+  .grid-info {
+    padding: 12px;
+    font-size: 1em;
+  }
+}
